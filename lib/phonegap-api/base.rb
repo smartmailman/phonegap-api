@@ -3,7 +3,7 @@ module Phonegap
   class APIError < StandardError ; end
   
   class Connection
-    include HTTParty
+    include HTTMultiParty
     base_uri 'https://build.phonegap.com/api/v1'
     follow_redirects false
     format :json
@@ -16,19 +16,19 @@ module Phonegap
       end
     end
     
-    def get(url)
+    def get(url, options={})
       puts @auth.inspect
-      output = self.class.get(url, @auth)
+      output = self.class.get(url, @auth.merge!(options))
       check_response!(output).parsed_response
     end
     
-    def post(url, body)
-      output = self.class.post(url, @auth.merge!({:body =>{:data => body}}))
+    def post(url, body, options={})
+      output = self.class.post(url, @auth.merge!({:body =>{:data => body}}).merge!(options))
       check_response!(output).parsed_response
     end
     
-    def put(url, body)
-      output = self.class.put(url, @auth.merge!({:body =>{:data => body}}))
+    def put(url, body, options={})
+      output = self.class.put(url, @auth.merge!({:body =>{:data => body}}).merge!(options))
       check_response!(output).parsed_response
     end
     
