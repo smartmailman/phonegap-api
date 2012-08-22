@@ -29,7 +29,7 @@ module Phonegap
       raise UnsupportedPlatformError unless SUPPORTED_PLATFORMS.include?(platform)
       self.get("/keys/#{platform}")
     end
-    
+
     def get_key(platform, key_id)
       raise UnsupportedPlatformError unless SUPPORTED_PLATFORMS.include?(platform)
       self.get("/keys/#{platform}/#{key_id}")

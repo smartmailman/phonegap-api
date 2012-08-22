@@ -9,8 +9,8 @@ module Phonegap
     	self.post("/apps/#{app_id}", params, options)
     end
     
-    def delete_app(app_id, options={})
-      self.delete("/apps/#{app_id}", options)
+    def delete_app(app_id)
+      self.delete("/apps/#{app_id}")
     end
   end
 end

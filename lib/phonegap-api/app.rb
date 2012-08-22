@@ -1,7 +1,11 @@
 module Phonegap
 
   class App
+
+    attr_accessor :api_data
+
     def initialize(api_data)
+      @api_data = api_data
       api_data.each do |k,v|
         instance_variable_set(("@"+k).to_sym,v)
       end
