@@ -4,12 +4,12 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = "phonegap-build-api"
+  s.name = "phonegap-api"
   s.version = "1.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Smart Mailman"]
-  s.date = "2012-08-22"
+  s.date = "2012-08-26"
   s.description = "Ruby wrapper to the Phonegap build API"
   s.email = "smartmailman@gmail.com"
   s.extra_rdoc_files = [
@@ -32,7 +32,6 @@ Gem::Specification.new do |s|
     "lib/phonegap-api/base.rb",
     "lib/phonegap-api/read.rb",
     "lib/phonegap-api/write.rb",
-    "phonegap-api.gemspec",
     "spec/phonegap-api_spec.rb",
     "spec/spec_helper.rb"
   ]
